@@ -1,0 +1,124 @@
+.form-post {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    /* Desactiva la capacidad de redimensionar el textarea */
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Resto de los estilos */
+.post {
+    width: 80%;
+    margin: 0 auto 40px auto; 
+}
+
+.post-author {
+    font-size: 14px;
+    text-align: right;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.comments h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #555;
+}
+
+.comment-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: vertical;
+    min-height: 80px;
+    font-size: 14px;
+}
+
+.comment-submit {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.comment-submit:hover {
+    background-color: #45a049;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+.New-post
+{
+    margin: 0 auto 40px auto; 
+}

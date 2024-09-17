@@ -27,7 +27,7 @@ class loginController extends Controller
             return redirect()->route('showlogin')->with('error', 'Credenciales Incorrectas');
         }
 
-        return redirect()->intended('Inicio');
+        return redirect()->intended('inicio');
     }
 
     public function outlogin(Request $request)
@@ -42,7 +42,7 @@ class loginController extends Controller
         $request->session()->regenerateToken();
 
         // Redirigir al usuario a la página de inicio u otra página
-        return redirect()->route('login');
+        return redirect()->route('showlogin');
     }
 
     public function NewUser() 
