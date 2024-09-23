@@ -1,17 +1,13 @@
 <div class="container">
     <div class="mb-3">
-        {{-- onclick="testEvent('hola mundo')" --}}
         <button class="btn btn-light" style="display: block; margin: 0 auto;" wire:click='viewCreate'>CREAR
             PUBLICACION</button>
     </div>
-
     @if (session()->has('message'))
         <div class="alert alert-success">
             {{ session('message') }}
         </div>
     @endif
-
-
     @if ($view)
         <div class="form-post">
             <form wire:submit.prevent="submit">
@@ -71,26 +67,16 @@
                             <button type="submit" class="btn btn-primary">ACTUALIZAR</button>
                         </div>
                     </form>
-
-                    </form>
                 </div>
             @endif
 
             <!-- Sección de comentarios -->
             <div class="comments">
 
-                @livewire('Coments', ['postId'=> $registros->id], key($registros->id))
+                @livewire('Coments', ['postId' => $registros->id], key($registros->id))
 
             </div>
         </div>
     @endforeach
-
-
-    <script>
-        function testEvent(text) {
-            Livewire.dispatch('test-event', text);
-        }
-    </script>
-
 
 </div>

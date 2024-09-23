@@ -10,6 +10,7 @@
                 </li>
             </ul>
         </div>
+        <div><a href="{{ route('BuscarUser') }}" class="dropdown-item">Buscar<img src="{{ asset('img/Lupa.png') }}" alt="" style="height: 30px; width: 30px; margin: 0 30px 0 2px"></a></div>
         <div class="btn-group dropstart" role="group">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">

@@ -36,3 +36,6 @@ Route::get('/user/{name}', [usersController::class, 'Inicio'])
     // Proteger rutas con un middleware
 Route::resource('/pots', PostController::class)
     ->names('pots');
+
+Route::get('/search', [usersController::class, 'search'])
+    ->name('BuscarUser');

@@ -3,20 +3,15 @@
 namespace App\Livewire;
 
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
-use function Pest\Laravel\post;
-
-class NewPost extends Component
+class MyPosts extends Component
 {
-    public $view = false;
+    public $userId;
     public $update = false;
     public $viewUpdate = false;
-    public $title;
-    public $content;
+    public $view = false;
     public $updatePost = [];
 
     public $formData = [
@@ -24,15 +19,30 @@ class NewPost extends Component
         'title' => ''
     ];
 
+    function mount($userId)
+    {
+
+        $this->userId = $userId;
+    }
+
     public function render()
     {
-        $posts = Post::all();
 
-        return view('livewire.new-post', ['posts' => $posts]);
+        $posts = Post::where('user_id', $this->userId)->get();
+
+        return view('livewire.my-posts', ['posts' => $posts]);
+    }
+
+    function viewCreate()
+    {
+        $this->view = !$this->view;
+        $this->reset('formData');
+        $this->update = false;
     }
 
     function submit()
     {
+
         $this->validate([
             'formData.content' => 'required',
             'formData.title' => 'required',
@@ -40,8 +50,6 @@ class NewPost extends Component
             'formData.content.required' => 'El contenido es requerido',
             'formData.title.required' => 'El titulo es requerido',
         ]);
-
-
         if (!Post::create([
             "content" => $this->formData['content'],
             "user_id" => Auth::id(),
@@ -55,9 +63,18 @@ class NewPost extends Component
 
         $this->reset('formData');
         $this->view = false;
-        $this->update = false;
+        // $this->update = false;
         $this->render();
-        
+    }
+    function delete($postId)
+    {
+        $post = Post::find($postId);
+
+        if (!$post->delete()) {
+            session()->flash('message', 'Publicacion No Eliminada');
+            return;
+        }
+        session()->flash('message', 'Publicacion Eliminada');
     }
 
     function toggleUpdate($id)
@@ -105,17 +122,6 @@ class NewPost extends Component
         ];
     }
 
-    function delete($post_id)
-    {
-
-        $post = Post::find($post_id);
-
-        if (!$post->delete()) {
-            session()->flash('message', 'Publicacion No Eliminada');
-            return;
-        }
-        session()->flash('message', 'Publicacion Eliminada');
-    }
     function ActualizarPost($id)
     {
 
@@ -143,10 +149,5 @@ class NewPost extends Component
         $this->view = false;
         $this->render();
     }
-    function viewCreate()
-    {
-        $this->view = !$this->view;
-        $this->reset('formData');
-        $this->update = false;
-    }
+
 }
