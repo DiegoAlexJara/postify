@@ -39,3 +39,6 @@ Route::resource('/pots', PostController::class)
 
 Route::get('/search', [usersController::class, 'search'])
     ->name('BuscarUser');
+
+Route::get('/users/{visit}', [usersController::class, 'visit'])
+    ->name('visit');

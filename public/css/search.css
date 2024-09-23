@@ -1,0 +1,106 @@
+.navbar {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    width: 98%; /* Ocupa todo el ancho de la pantalla */
+    position: fixed; /* Mantiene el navbar fijo en la parte superior */
+    top: 0; /* Coloca el navbar en la parte superior */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+/* Contenedor de los elementos de la barra */
+.container {
+    display: flex; /* Usa flex para alinear los elementos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+/* Estilo para la imagen */
+.return-icon {
+    width: 40px; /* Ajusta el tamaño de la imagen */
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+}
+
+/* Estilos para el formulario */
+.search-form {
+    display: flex; /* Hace que los elementos estén en fila */
+    align-items: center; /* Alinea el input y el botón al centro */
+    flex-grow: 1; /* Permite que el formulario crezca */
+    gap: 10px; /* Espacio entre el input y el botón */
+}
+
+/* Estilo para el input de texto */
+.input-text {
+    padding: 10px 15px; /* Espaciado dentro del input */
+    font-size: 1em; /* Tamaño de texto */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
+}
+
+/* Estilo para el botón de enviar */
+.submit-btn {
+    padding: 10px 15px; /* Espaciado dentro del botón */
+    font-size: 1em; /* Tamaño de texto */
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor a pointer */
+    transition: background-color 0.3s ease; /* Animación de cambio de color */
+}
+
+/* Efecto hover para el botón */
+.submit-btn:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+
+
+/*RESULTADOS*/
+
+.results-container {
+    padding: 20px; /* Espaciado alrededor de los resultados */
+    margin-top: 60px; /* Margen para no chocar con el navbar */
+}
+
+.user-cards {
+    display: flex; /* Usa flexbox para organizar las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente línea */
+    gap: 20px; /* Espacio entre tarjetas */
+}
+
+.user-card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+    width: calc(33.333% - 20px); /* Tres tarjetas por fila con espacio */
+    transition: transform 0.2s; /* Efecto de transición para el hover */
+}
+
+.user-card:hover {
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.user-card h3 {
+    margin: 0 0 10px; /* Espaciado del título */
+    font-size: 1.5em; /* Tamaño de fuente del título */
+}
+
+.view-button {
+    display: inline-block; /* Hacer que el botón sea un bloque en línea */
+    padding: 10px 15px; /* Espaciado interno */
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    transition: background-color 0.3s ease; /* Transición de color */
+}
+
+.view-button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
