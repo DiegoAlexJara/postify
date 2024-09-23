@@ -21,6 +21,9 @@ Route::get('/NewUser', [loginController::class, 'NewUser'])
     ->name('NuevoUsuario')
     ->middleware(loginUser::class);
 
+Route::post('/NewUser', [loginController::class, 'CrearUsuario'])
+    ->name('CrearUsuario');
+
 Route::get('/inicio', [usersController::class, 'index'])
     ->name('Inicio')
     ->middleware(AuthUser::class);

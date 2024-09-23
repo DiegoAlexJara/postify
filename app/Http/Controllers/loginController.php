@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
 
 use function Laravel\Prompts\password;
 
@@ -47,7 +49,19 @@ class loginController extends Controller
 
     public function NewUser() 
     {
+        return view('NewUser');
+    }
 
+    public function CrearUsuario(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255|unique:users,name',
+            'email' => 'required|email|unique:users,email|max:255',
+            'password' => ['required', 'confirmed', Password::defaults()]
+        ]);
+        $user = User::create($request->all());
+
+        return redirect()->route('login')->with('success', 'Cuenta Creada');
     }
     
 }
