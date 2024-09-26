@@ -34,6 +34,7 @@ class usersController extends Controller
 
     public function visit(String $name)
     {
+
         $user = User::where('name', $name)->first(); // Obtiene el primer usuario que coincida con el nombre
 
         if ($user) { // Verifica que el usuario exista

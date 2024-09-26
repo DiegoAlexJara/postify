@@ -142,10 +142,10 @@ class Coments extends Component
             session()->flash('error', 'No Se pudo Actualizar');
             return;
         }
-        session()->flash('message', 'Se Actualizo La publicacion');
+        session()->flash('success', 'Se Actualizo El Comentario');
 
         $this->reset('formData');
-        $this->update[] = false;
+        $this->commentsUpdate[$commentId] = false;
         $this->view = false;
     }
 }

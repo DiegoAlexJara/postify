@@ -101,6 +101,8 @@ class MyPosts extends Component
             return;
         }
 
+        if($this->update[$id]) return;
+        
         $this->update[$id] = !$this->update[$id];
         $this->view = false;
 

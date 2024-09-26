@@ -40,8 +40,14 @@
 
 /* Resto de los estilos */
 .post {
+    padding: 20px;
     width: 80%;
+    border: 1px  solid black;
     margin: 0 auto 40px auto; 
+    box-shadow: -10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+.post:hover{
+    transform: scale(1.05);
 }
 
 .post-author {
@@ -69,7 +75,7 @@
     padding: 10px;
     background-color: #f9f9f9;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #7b7b7b;
 }
 
 .comment-author {
@@ -110,6 +116,7 @@
 
 .comment-submit:hover {
     background-color: #45a049;
+    transform: scale(1.05);
 }
 
 .post-title {
@@ -121,4 +128,9 @@
 .New-post
 {
     margin: 0 auto 40px auto; 
+}
+.comments{
+    border: .5px solid rgb(172, 172, 172);
+    margin: 2px;
+    padding: 10px;
 }

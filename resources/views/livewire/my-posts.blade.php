@@ -19,7 +19,7 @@
                 </div>
                 <div class="mb-3">
                     <textarea class="form-control" id="content" wire:model="formData.content" rows="3"
-                        placeholder="Nueva Publicación" resize="none" maxlength="1000" minlength="1" oninput="updateCharCount()"></textarea>
+                        placeholder="Nueva Publicación" r   esize="none" maxlength="1000" minlength="1" oninput="updateCharCount()"></textarea>
                     <p id="charCount">1000 Caracteres Restantes</p>
                     @error('formData.content')
                         <p>{{ $message }}</p>
