@@ -1,10 +1,15 @@
 .form-post {
     width: 700px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
     background-color: #fff;
     padding: 0 10px;
     border-radius: 8px;
     text-align: center;
+    border: 1px solid rgb(159, 159, 159);
+    padding: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+
+
 }
 
 .form-control {

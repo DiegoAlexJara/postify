@@ -77,12 +77,12 @@
     border-radius: 8px; /* Bordes redondeados */
     padding: 15px; /* Espaciado interno */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
-    width: calc(33.333% - 20px); /* Tres tarjetas por fila con espacio */
+    width: 100%; /* Tres tarjetas por fila con espacio */
     transition: transform 0.2s; /* Efecto de transición para el hover */
 }
 
 .user-card:hover {
-    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
 }
 
 .user-card h3 {

@@ -29,22 +29,25 @@
         </div>
     </nav>
     <div class="results-container">
-        @if(isset($users) && $users->count())
-            <h2>Resultados para: "{{ $query }}"</h2>
+        @if (isset($users) && $users->count())
+            @if (isset($query))
+                <h2>Resultados para: "{{ $query }}"</h2>
+            @endisset
+            
             <div class="user-cards">
-                @foreach($users as $user)
-                <div class="user-card">
-                    <h3>{{ $user->name }}</h3>
-                    <p>Email: {{ $user->email }}</p>
-                    <p>Registrado el: {{ $user->created_at->format('d-m-Y') }}</p>
-                    <a href="{{ route('visit', $user->name) }}" class="view-button">Ver Usuario</a>
-                </div>
+                @foreach ($users as $user)
+                    <div class="user-card">
+                        <h3>{{ $user->name }}</h3>
+                        <p>Email: {{ $user->email }}</p>
+                        <p>Registrado el: {{ $user->created_at->format('d-m-Y') }}</p>
+                        <a href="{{ route('visit', $user->name) }}" class="view-button">Ver Usuario</a>
+                    </div>
                 @endforeach
             </div>
         @else
             <h2>No se encontraron resultados para: "{{ $query }}"</h2>
         @endif
-    </div>
+</div>
 </body>
 
 </html>
