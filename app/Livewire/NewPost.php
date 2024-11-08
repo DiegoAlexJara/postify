@@ -26,7 +26,7 @@ class NewPost extends Component
 
     public function render()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view('livewire.new-post', ['posts' => $posts]);
     }

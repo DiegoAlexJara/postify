@@ -7,7 +7,6 @@
 @endsection
 @section('content')
     @livewire('NewPost')
-
 @endsection
 @section('js')
     <script src="{{ asset('js/create-post.js') }}"></script>

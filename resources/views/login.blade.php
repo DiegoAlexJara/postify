@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INGRESAR</title>
+    <link rel="icon" href="{{ asset('img/postify.webp   ') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
     {{-- Boostrap --}}
@@ -15,50 +16,56 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 
+
 </head>
 
 <body>
-    <div class="content">
+    <div class="login">
+        <div class="content">
 
-        <form class="mb-3" method="POST" action="{{ route('login') }}">
+            <form class="mb-3" method="POST" action="{{ route('login') }}">
 
-            @session('success')
-                <div class="alert alert-success" role="alert">
-                    {{ session('success') }}
+                @session('success')
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endsession
+                @session('error')
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('error') }}
+                    </div>
+                @endsession
+
+                @csrf
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">CORREO ELECTRONICO</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        aria-describedby="emailHelp" value="admin@gmail.com"
+                        style="background-color: rgba(0, 0, 0, 0); color: white; font-size: 18px;">
+                    @error('email')
+                        <p>{{ $message }}</p>
+                    @enderror
                 </div>
-            @endsession
-            @session('error')
-                <div class="alert alert-danger" role="alert">
-                    {{ session('error') }}
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">CONTRASEÑA</label>
+                    <input type="password" class="form-control" id="password" name="password" value="Admin1234"
+                        style="background-color: rgba(0, 0, 0, 0); color: white; font-size: 18px;">
+                    @error('password')
+                        <p>{{ $message }}</p>
+                    @enderror
                 </div>
-            @endsession
 
-            @csrf
+                <div class="d-grid gap-2">
+                    <button class="btn btn-dark" type="submit">INGRESAR</button>
+                </div>  
 
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">CORREO ELECTRONICO</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
-                    value="{{ old('email') }}">
-                @error('email')
-                    <p>{{ $message }}</p>
-                @enderror
-            </div>
+            </form>
 
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-                @error('password')
-                    <p>{{ $message }}</p>
-                @enderror
-            </div>
+            <a href="{{ route('NuevoUsuario') }}" class="mb-3">CREAR USUARIO</a>
 
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="submit">INGRESAR</button>
-            </div>
-
-        </form>
-
-        <a href="{{ route('NuevoUsuario') }}" class="mb-3">CREAR USUARIO</a>
+        </div>
 
     </div>
 </body>

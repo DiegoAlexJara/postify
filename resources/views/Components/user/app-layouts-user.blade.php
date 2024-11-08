@@ -9,6 +9,8 @@
     {{-- Estilos --}}
     @yield('estilos')
     <link rel="stylesheet" href="{{ asset('css/app-layout.css') }}">
+    <link rel="icon" href="{{ asset('img/postify.webp   ') }}" type="image/x-icon">
+
 
     {{-- Boostrap --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
